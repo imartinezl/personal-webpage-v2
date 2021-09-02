@@ -1,0 +1,8 @@
+- name: About
+  link: /about.html
+- name: Work
+  link: /work.html
+- name: Research
+  link: /research.html
+- name: Resume
+  link: assets/docs/resume-3.pdf

@@ -1,0 +1,181 @@
+title: Iñigo Martínez
+subtitle: Ph.D. | data scientist
+about: |
+  Hi, my name is Iñigo and I'm a data scientist and researcher on **data science and artificial intelligence**.
+  I hold a Bachelor’s and Master’s degree in science (Mechanical Engineering, University of Navarra).
+  
+  <br/>
+
+  I have an extensive background working with large and varied datasets and using advanced statistical methods.
+  I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
+  
+  <!---
+  I develop machine learning methods to understand the underlying dynamics of complex systems.
+  My passion is 
+  My goal is 
+  I have a strong interest on 
+  -->
+
+experience:
+  title: Experience
+  history:
+    - company: Vicomtech Research Center
+      department: Data Intelligence for Energy and Industrial Processes
+      position: PhD, Data Scientist
+      date-from: Jun. 2019
+      date-until: Present
+      location: San Sebastian, Spain
+
+    - company: NEM, Siemens Gamesa Renewable Energy
+      department: Data Science
+      position: PhD, Data Scientist
+      date-from: Jul. 2017
+      date-until: May. 2019
+      location: San Sebastian, Spain
+
+    - company: MIT Media Lab
+      department: City Science
+      position: Research Assistant & Master's Thesis
+      date-from: Sep. 2016
+      date-until: May. 2017
+      location: Boston, US
+
+    - company: CEIT
+      department: Bioinformatics
+      position: Intern
+      date-from: Jun. 2015
+      date-until: Sep. 2015
+      location: San Sebastian, Spain
+
+    - company: CIC nanoGUNE
+      department: Nanomagnetism
+      position: Intern
+      date-from: Jul. 2014
+      date-until: Sep. 2014
+      location: San Sebastian, Spain
+
+education:
+  title: Education
+  history:
+    - university: University of Navarra - Tecnun School of Engineering
+      location: San Sebastian, Spain
+      degrees:
+        - title: Ph.D. in Applied Engineering
+          date-from: Mar. 2018
+          date-until: Expected graduation Jan. 2022
+        
+        - title: Master of Science in Industrial (Mechanical) Engineering
+          date-from: Sep. 2015
+          date-until: Jul. 2017
+
+        - title: Bachelor of Science in Industrial Technologies
+          date-from: Sep. 2011
+          date-until: May. 2015
+
+interests:
+  title: My research focus & areas of interest
+  subtitle: take a look at some of the things I love working on
+  areas:
+    - machine learning
+    - time series analysis
+    - functional data analysis
+    - anomaly detection
+    - Bayesian statistics
+    - agent-based simulation
+    - data visualization
+    - data analytics
+
+skills:
+  title: Skills
+  scopes:
+    - title: Code
+      color: pink-700
+      skills:
+        - R
+        - Python
+        - Julia
+        - C++
+        - CUDA
+        - Matlab
+        - Java
+        - Processing
+        - p5
+    - title: Data Science
+      color: red-700
+      skills:
+        - PyTorch
+        - Tensorflow
+        - Keras
+        - Scikit-Learn
+        - Numpy
+        - Pandas 
+
+    - title: Web Dev
+      color: yellow-700
+      skills: 
+        - Javascript
+        - React
+        - React-Native
+        - Vue
+        - Node
+        - Webpack
+        - Jekyll
+        - TailwindCSS
+        - Shiny
+        - WebGL
+
+    - title: Simulation
+      color: green-700
+      skills: 
+        - Simpy
+        - GAMA
+        - Simulink
+        - Unity
+
+    - title: Maps
+      color: blue-700
+      skills:
+        - QGIS
+        - Mapbox
+        - Leaflet
+        - deck.gl
+
+    - title: Graphics
+      color: indigo-700
+      skills:
+        - Adobe CC
+        - Inkscape
+        - TikZ
+        - ggplot2
+
+    - title: Fabrication
+      color: purple-700
+      skills:
+        - Laser cutter
+        - Water jet
+        - 3D printing
+        - CNC
+
+    - title: CAD CAE
+      color: gray-700
+      skills:
+        - Solidworks
+        - PTC Creo
+        - AutoCAD
+        - ANSYS
+
+
+
+
+references:
+  - title: Research publications
+    file: references
+  - title: Preprints on arXiv
+    file: arxiv
+
+projects-table:
+  - Date
+  - Title
+  - Made at
+  - Built with
+  - Link
