@@ -1,4 +1,10 @@
-_site/
+
+# Jekyll 
+_site
+.jekyll-metadata
+*-cache/
 .sass-cache/
 .jekyll-cache/
-.jekyll-metadata
+
+# npm
+/node_modules/
