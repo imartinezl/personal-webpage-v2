@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+
+
+
+<h1>{{ page.title }}</h1>
+
+{{ page.excerpt }}
+
+{% if page.img %}
+<img src="{{ page.img }}" width="200">
+{% endif %}
+
+{% if page.keywords %}
+{% assign keywords = page.keywords | split: ';' %}
+{% for keyword in keywords %}
+  <p>
+  #{{ keyword | lstrip }}
+  </p>
+{% endfor %}
+{% endif %}
+
+{% if page.technologies %}
+{% assign technologies = page.technologies | split: ';' %}
+{% for tech in technologies %}
+  <p>
+  ~{{ tech | lstrip }}
+  </p>
+{% endfor %}
+{% endif %}
+
+<div>
+  {{ content | markdownify}}
+</div>
+
+
+{% if page.url contains 'projects' %}
+<div>
+    {% assign maxRelated = 4 %}
+    {% assign minCommonTags =  1 %}
+    {% assign maxRelatedCounter = 0 %}
+
+    {% for project in site.projects %}
+    
+        {% assign sameTagCount = 0 %}
+        {% assign commonTags = '' %}
+
+        {% if project.url != page.url %}
+
+            {% for tag in project.tags %}
+                {% if page.tags contains tag %}
+                {% assign sameTagCount = sameTagCount | plus: 1 %}
+                {% capture tagmarkup %} <span class="label label-default">{{ tag }}</span> {% endcapture %}
+                {% assign commonTags = commonTags | append: tagmarkup %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+            
+        {% if sameTagCount >= minCommonTags %}
+        {% if maxRelatedCounter == 0 %}
+        <h4>You May Also Enjoy:</h4>
+        {% endif %}
+        <div>
+        <h5><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}{{ commonTags }}</a></h5>
+        </div>
+        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+        {% if maxRelatedCounter >= maxRelated %}
+            {% break %}
+        {% endif %}
+        {% endif %}
+
+    {% endfor %}
+</div>
+{% endif %}
+
+
+My tags: 
+{% for tag in page.tags %}
+  {% assign tag_slug = tag | slugify: "raw" %}
+  <a
+    href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+    rel="category tag">
+    #{{ tag }}
+  </a>
+{% endfor %}
+
+
+{% if site.prev-next %}
+<div>
+  {% if page.previous.url %}
+    Prev:
+    <a href="{{ site.url }}{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+  {% endif %}
+
+  {% if page.next.url %}
+    Next:
+    <a href="{{ site.url }}{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
+  {% endif %}
+</div>
+{% endif %}

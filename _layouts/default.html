@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+
+{% include head.html %}
+
+<body>
+    <script>0</script>
+    <div class="antialiased flex flex-col overflow-hidden w-screen h-screen sm:flex-row">
+        {% include sidebar.html %}
+        {{ content }}
+
+        <!-- {% include projects_list.html %} -->
+    </div>
+</body>
+
+</html>

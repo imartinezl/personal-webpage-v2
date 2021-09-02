@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div>
+  <h1>Articles tagged with "{{ page.tag-name }}"</h1>
+
+  {% for post in site.projects %}
+    {% if post.tags contains page.tag-name %}
+      {{ post.title }} 
+    {% endif %}
+  {% endfor %}
+</div>
