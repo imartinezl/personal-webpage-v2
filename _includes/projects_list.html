@@ -1,0 +1,27 @@
+{% if site.projects %}
+    <ul>
+        {% for project in site.projects %}
+        <li>
+          <a href="{{ site.url }}{{ project.url | relative_url }}">
+            <div>
+              {{ project.title }}
+            </div>
+            <div>
+              {% if site.date_format %}
+                {{ project.date | date: site.date_format }}
+              {% else %}
+                {{ project.date | date: "%b %-d, %Y" }}
+              {% endif %}
+            </div>
+            <div>
+              {{ project.category }}
+            </div>
+          </a>
+  
+          {% if project.img %}
+            <img src="{{ project.img }}" alt="{{ post.title }}">
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+{% endif %}
