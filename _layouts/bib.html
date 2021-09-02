@@ -1,0 +1,24 @@
+---
+---
+
+<div class="py-4">
+
+    <div>
+        {{reference}}
+    </div>
+
+    <div>
+        {% if entry.doi %}
+        <span>
+            <a class="underline text-gray-400" href="{{ entry.doi | prepend: 'http://doi.org/' }}">{{ entry.doi}}</a>
+            &#xe04e;
+        </span>
+
+        {% elsif entry.url %}
+        <span>
+            <a class="underline text-gray-400" href="{{ entry.url }}">{{ entry.url }}</a>
+            &#xe04e;
+        </span>
+        {% endif %}
+    </div>
+</div>
