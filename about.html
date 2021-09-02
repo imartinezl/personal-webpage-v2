@@ -1,0 +1,124 @@
+---
+layout: default
+title: About
+---
+
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow divide-y space-y-7">
+
+    <div class="text-left sm:text-left max-w-prose">
+        {{ site.data.index.about | markdownify }}
+    </div>
+
+    <!-- <p class="my-4 mx-auto sm:hidden animate-bounce text-3xl">
+        &#xe141;
+    </p> -->
+
+
+    <div>
+        <div class="font-bold text-xl pt-7 pb-3">
+            {{ site.data.index.interests.title }}
+        </div>
+        <div class="flex flex-wrap max-w-prose">
+            {% for item in site.data.index.interests.areas %}
+            <div class="px-3 py-1 mr-1 my-1 text-sm border-2 rounded-full">
+                {{ item }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <div class="font-bold text-xl pt-7 pb-3">
+            {{ site.data.index.experience.title }}
+        </div>
+        <div class="flex flex-col">
+            {% for item in site.data.index.experience.history %}
+            <div class="py-3">
+                <div class="font-bold">
+                    {{ item.company }}
+                </div>
+                <div class="italic">
+                    {{ item.department }}
+                </div>
+                <div>
+                    {{ item.position }}
+                </div>
+                <div class="text-sm">
+                    {{ item.date-from }} - {{ item.date-until }}
+                </div>
+            </div>
+            <!-- {{ item.location }} -->
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <div class="font-bold text-xl pt-7 pb-3">
+            {{ site.data.index.education.title }}
+        </div>
+        <div class="flex flex-col">
+            {% for item in site.data.index.education.history %}
+            <div class="py-3">
+                <div class="font-bold">
+                    {{ item.university }}
+                </div>
+                <div class="text-sm">
+                    {{ item.location }}
+                </div>
+                {% for degree in item.degrees %}
+                <div class="pl-3 py-3">
+                    <div class="italic">
+                        {{ degree.title }}
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        {{ degree.date-from }} - {{ degree.date-until }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <div class="font-bold text-xl pt-7 pb-3">
+            {{ site.data.index.skills.title }}
+        </div>
+        <!-- <div class="flex flex-col space-y-2 pl-3">
+            {% for scope in site.data.index.skills.scopes %}
+                <div class="flex flex-wrap divide-x divide-opacity-60 divide-{{scope.color}} space-x-1.5 sm:space-x-3 items-center">
+                    <div class="px-3 font-sans font-medium text-sm rounded-full border-2 border-opacity-80 border-{{scope.color}}">
+                        {{ scope.title}}
+                    </div>
+                    {% for skill in scope.skills %}
+                    <div class="pl-1.5 sm:pl-3 my-1 font-sans text-xs sm:text-sm">
+                        {{ skill }}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div> -->
+        <div class="flex flex-wrap space-x-0 justify-between sm:justify-start">
+            {% for scope in site.data.index.skills.scopes %}
+            <div class="flex flex-col sm:pl-6 pb-6 divide-x divide-opacity-60 divide-{{scope.color}} items-start">
+                <div
+                    class="min-w-full px-3 py-1 font-sans font-medium text-sm text-center rounded-full border-2 border-opacity-80 border-{{scope.color}}">
+                    {{ scope.title}}
+                </div>
+                {% for skill in scope.skills %}
+                <div class="px-1.5 sm:px-3 ml-2 my-1 font-sans text-sm sm:text-sm">
+                    {{ skill }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <!-- 
+    On my website you can find some examples of my projects, most of them are links to a website or interactive
+    visualization.
+
+    hackerrank?? -->
+</div>

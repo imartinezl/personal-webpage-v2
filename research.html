@@ -1,0 +1,14 @@
+---
+layout: default
+title: Research
+---
+
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow">
+  {% for item in site.data.index.references %}
+    <p class="text-2xl font-normal sm:text-lg">{{item.title}}</p>
+
+    <div class="flex text-base sm:text-base">
+      {% bibliography --file {{item.file}} %}
+    </div>
+  {% endfor %}
+</div>
