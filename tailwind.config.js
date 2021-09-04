@@ -15,7 +15,8 @@ module.exports = {
         extend: {
             borderWidth: ['hover', 'group-hover'],
             borderOpacity: ['hover', 'group-hover'],
-            fontWeight: ['hover', 'group-hover']
+            fontWeight: ['hover', 'group-hover'],
+            display: ['last'],
         },
     },
     plugins: [
