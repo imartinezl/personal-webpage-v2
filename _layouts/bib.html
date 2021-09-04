@@ -10,13 +10,15 @@
     <div>
         {% if entry.doi %}
         <span>
-            <a class="underline text-gray-400" href="{{ entry.doi | prepend: 'http://doi.org/' }}">{{ entry.doi}}</a>
+            <a class="underline text-gray-400 hover:text-{{site.color}}-700"
+                href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank">{{ entry.doi}}</a>
             &#xe04e;
         </span>
 
         {% elsif entry.url %}
         <span>
-            <a class="underline text-gray-400" href="{{ entry.url }}">{{ entry.url }}</a>
+            <a class="underline text-gray-400 hover:text-{{site.color}}-700" href="{{ entry.url }}" target="_blank">{{
+                entry.url }}</a>
             &#xe04e;
         </span>
         {% endif %}
