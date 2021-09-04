@@ -2,14 +2,12 @@ title: Iñigo Martínez
 subtitle: Ph.D. | data scientist
 about: |
   Hi, my name is Iñigo and I'm a data scientist and researcher on **data science and artificial intelligence**.
-  I hold a Bachelor’s and Master’s degree in science (Mechanical Engineering, University of Navarra).
-  
-  <br/>
-
+  <br/><br/>
   I have an extensive background working with large and varied datasets and using advanced statistical methods.
   I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
   
   <!---
+  I hold a Bachelor’s and Master’s degree in science (Mechanical Engineering, University of Navarra).
   I develop machine learning methods to understand the underlying dynamics of complex systems.
   My passion is 
   My goal is 
@@ -25,6 +23,7 @@ experience:
       date-from: Jun. 2019
       date-until: Present
       location: San Sebastian, Spain
+      link: https://www.vicomtech.org/en/
 
     - company: NEM, Siemens Gamesa Renewable Energy
       department: Data Science
@@ -32,6 +31,7 @@ experience:
       date-from: Jul. 2017
       date-until: May. 2019
       location: San Sebastian, Spain
+      link: https://www.siemensgamesa.com/en-int/products-and-services/service-wind/diagnostics
 
     - company: MIT Media Lab
       department: City Science
@@ -39,13 +39,15 @@ experience:
       date-from: Sep. 2016
       date-until: May. 2017
       location: Boston, US
+      link: https://www.media.mit.edu/
 
-    - company: CEIT
-      department: Bioinformatics
+    - company: CEIT Research Center
+      department: Computational Biology
       position: Intern
       date-from: Jun. 2015
       date-until: Sep. 2015
       location: San Sebastian, Spain
+      link: https://www.ceit.es/en/
 
     - company: CIC nanoGUNE
       department: Nanomagnetism
@@ -53,12 +55,14 @@ experience:
       date-from: Jul. 2014
       date-until: Sep. 2014
       location: San Sebastian, Spain
+      link: https://www.nanogune.eu/en/research/groups/nanomagnetism
 
 education:
   title: Education
   history:
     - university: University of Navarra - Tecnun School of Engineering
       location: San Sebastian, Spain
+      link: https://www.unav.edu/en/home
       degrees:
         - title: Ph.D. in Applied Engineering
           date-from: Mar. 2018
@@ -76,19 +80,28 @@ interests:
   title: My research focus & areas of interest
   subtitle: take a look at some of the things I love working on
   areas:
-    - machine learning
-    - time series analysis
-    - functional data analysis
-    - anomaly detection
-    - Bayesian statistics
-    - agent-based simulation
-    - data visualization
-    - data analytics
+    - title: machine learning
+      link: https://en.wikipedia.org/wiki/Machine_learning
+    - title: time series
+      link: https://en.wikipedia.org/wiki/Time_series
+    - title: functional data analysis
+      link: https://en.wikipedia.org/wiki/Functional_data_analysis
+    - title: anomaly detection
+      link: https://en.wikipedia.org/wiki/Anomaly_detection
+    - title: Bayesian statistics
+      link: https://en.wikipedia.org/wiki/Bayesian_statistics
+    - title: agent-based simulation
+      link: https://en.wikipedia.org/wiki/Agent-based_model
+    - title: data visualization
+      link: https://en.wikipedia.org/wiki/Data_visualization
+    - title: data analytics
+      link: https://en.wikipedia.org/wiki/Analytics
+
 
 skills:
   title: Skills
   scopes:
-    - title: Code
+    - title: Languages
       color: pink-700
       skills:
         - R
@@ -98,8 +111,8 @@ skills:
         - CUDA
         - Matlab
         - Java
-        - Processing
-        - p5
+        - SQL
+
     - title: Data Science
       color: red-700
       skills:
@@ -109,13 +122,13 @@ skills:
         - Scikit-Learn
         - Numpy
         - Pandas 
+        - Tidyverse
 
     - title: Web Dev
       color: yellow-700
       skills: 
         - Javascript
         - React
-        - React-Native
         - Vue
         - Node
         - Webpack
@@ -123,6 +136,17 @@ skills:
         - TailwindCSS
         - Shiny
         - WebGL
+
+    - title: Graphics
+      color: indigo-700
+      skills:
+        - Adobe CC
+        - Inkscape
+        - TikZ
+        - ggplot2
+        - matplotlib
+        - Processing
+        - p5
 
     - title: Simulation
       color: green-700
@@ -139,14 +163,6 @@ skills:
         - Mapbox
         - Leaflet
         - deck.gl
-
-    - title: Graphics
-      color: indigo-700
-      skills:
-        - Adobe CC
-        - Inkscape
-        - TikZ
-        - ggplot2
 
     - title: Fabrication
       color: purple-700
