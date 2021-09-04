@@ -22,8 +22,8 @@
                     <a href="{{ item.link }}" {%if item.link contains 'pdf' %} target="_blank" {% endif %}
                         class="flex items-start pr-3 py-2 sm:py-0">
                         &#xe04b;
-                        <div {% if page.url==item.link %} class="text-yellow-600 font-medium" {% endif %}
-                            class="transition duration-75 ease-in-out border-b-2 border-white group-hover:border-yellow-600 group-hover:font-medium">
+                        <div {% if page.url==item.link %} class="text-{{site.color}}-700 font-medium" {% endif %}
+                            class="transition duration-75 ease-in-out border-b-2 border-white group-hover:border-{{site.color}}-700 group-hover:font-medium">
                             {{ item.name }}
                         </div>
                     </a>
@@ -37,7 +37,7 @@
                     <a href="{{ item.link }}" target="_blank"
                         class="flex items-start pr-3 py-2 sm:py-0">
                         &#xe04e;
-                        <div class="transition duration-75 ease-in-out border-b-2 border-white group-hover:border-yellow-600 group-hover:font-medium">
+                        <div class="transition duration-75 ease-in-out border-b-2 border-white group-hover:border-{{site.color}}-700 group-hover:font-medium">
                             {{ item.name }}
                         </div>
                     </a>
