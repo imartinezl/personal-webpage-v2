@@ -142,41 +142,31 @@
     .font-custom {
         font-family: "Neue Haas Grotesk", Icons;
     }
-
-    /*
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
+   
+    ::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
     }
-    
-    .no-scrollbar {
-        -ms-overflow-style: none; 
-        scrollbar-width: none; 
+    ::-webkit-scrollbar-track {
+        background: transparent !important
     }
-
-    
-    ::-webkit-scrollbar{
-        width: 10px;
+    ::-webkit-scrollbar-thumb {
+        background-color: #D1D5DB !important;
+        border: none !important;
+        border-radius: 3px !important;
     }
-    
-    ::-webkit-scrollbar-track-piece{
-        background-color: #FFF;
-    }
-    
-    ::-webkit-scrollbar-thumb{
-        background-color: #CBCBCB;
-        outline: 2px solid #FFF;
-        outline-offset: -2px;
-        border: .1px solid #B7B7B7;
-    }
-    
     ::-webkit-scrollbar-thumb:hover{
-        background-color: #909090;
+        background-color: #9CA3AF !important;
     }
-    */
+    
+    :root {
+        scrollbar-color: #D1D5DB transparent !important;
+        scrollbar-width: thin !important;
+    }
 
     #nav-icon {
         width: 30px;
-        height: 22.5px;
+        height: 22px;
         position: relative;
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
@@ -212,7 +202,7 @@
     }
 
     #nav-icon span:nth-child(1) {
-        top: 0px;
+        top: 1px;
         -webkit-transform-origin: left center;
         -moz-transform-origin: left center;
         -o-transform-origin: left center;
@@ -220,7 +210,7 @@
     }
 
     #nav-icon span:nth-child(2) {
-        top: 9px;
+        top: 11px;
         -webkit-transform-origin: left center;
         -moz-transform-origin: left center;
         -o-transform-origin: left center;
@@ -229,7 +219,7 @@
     }
 
     #nav-icon span:nth-child(3) {
-        top: 18px;
+        top: 21px;
         -webkit-transform-origin: left center;
         -moz-transform-origin: left center;
         -o-transform-origin: left center;
@@ -260,47 +250,39 @@
     }
 
     @media screen and (min-width: 640px) {
-        .flex-important{
+        .flex-important {
             display: flex !important;
         }
     }
+
+    .border-animate {
+        position: relative;
+    }
+
+    .border-animate:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #2563eb;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .border-animate:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    .cursor-wikipedia {
+        cursor: url(https://es.wikipedia.org/static/favicon/wikipedia.ico), auto;
+    }
+
 }
 
 /*
-.container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: red;
-    overflow: hidden;
-}
-
-.card {
-    position: relative;
-    width: 80%;
-    height: 80%;
-    box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.2);
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 2px solid #0003;
-  }
-  
-a:hover {
-    border-bottom-color: #0009;
-}
-
 
 table {
     border-spacing: 0;
