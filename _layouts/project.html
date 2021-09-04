@@ -2,233 +2,231 @@
 layout: default
 ---
 
-<div
-  class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow pb-24 sm:pb-7">
-  
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow pb-24 sm:pb-7">
+
   <div class="flex flex-col flex-grow divide-y justify-between max-w-screen-xl overscroll-auto">
 
-  <div class="divide-y">
+    <div class="divide-y">
 
-    <div class="flex flex-row justify-between items-end">
-      <p class="text-xl font-bold sm:text-lg">
-        {{ page.title }}
-      </p>
+      <div class="flex flex-row justify-between items-end">
+        <p class="text-xl font-bold sm:text-lg">
+          {{ page.title }}
+        </p>
 
-      <div class="text-xl flex pl-4 gap-x-2">
-        {% if page.link %}
-        <a href={{page.link}} target="_blank" class="hover:text-{{site.color}}-700">
-          &#xe120;
-        </a>
-        {% endif %}
-
-        {% if page.github %}
-        <a href={{page.github}} target="_blank" class="hover:text-{{site.color}}-700">
-          &#xe035;
-        </a>
-        {% endif %}
-      </div>
-    </div>
-
-    {% if page.video or page.img %}
-    <div>
-      <div class="py-3 sm:max-h-full md:max-w-2xl">
-        {% if page.img %}
-        <img src="{{ page.img }}" class="">
-        {% endif %}
-        {% if page.video %}
-        <video controls autoplay muted>
-          <source src="{{ page.video }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        {% endif %}
-      </div>
-    </div>
-    {% endif %}
-
-    <div class="divide-y md:divide-y-0 md:grid md:grid-cols-2 md:gap-2 md:justify-between">
-
-      {% if page.description %}
-      <div class="py-3 text-sm flex flex-wrap md:order-last">
-        {{ page.description | markdownify }}
-      </div>
-      {% endif %}
-
-      <div class="py-3 text-sm md:order-first">
-
-        {% if page.date %}
-        <div class="flex flex-wrap gap-x-1 items-baseline">
-          <div class="">
-            Date:
-          </div>
-          <div class="p-0.5">
-            {% if site.date_format %}
-            {{ page.date | date: site.date_format }}
-            {% else %}
-            {{ page.date | date: "%b %-d, %Y" }}
-            {% endif %}
-          </div>
-        </div>
-        {% endif %}
-
-
-        {% if page.tags %}
-        <div class="flex flex-wrap gap-x-1 items-baseline">
-          <div class="">
-            Tags:
-          </div>
-          {% for tag in page.tags %}
-          {% assign tag_slug = tag | slugify: "raw" %}
-          <a href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} 
-            class="rounded border border-opacity-10 hover:border-opacity-100 hover:border-{{site.color}}-700 hover:text-{{site.color}}-700">
-            #{{ tag }}
+        <div class="text-xl flex pl-4 gap-x-2">
+          {% if page.link %}
+          <a href={{page.link}} target="_blank" class="hover:text-{{site.color}}-700">
+            &#xe120;
           </a>
-          {% endfor %}
+          {% endif %}
+
+          {% if page.github %}
+          <a href={{page.github}} target="_blank" class="hover:text-{{site.color}}-700">
+            &#xe035;
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if page.video or page.img %}
+      <div>
+        <div class="py-3 sm:max-h-full md:max-w-2xl">
+          {% if page.img %}
+          <img src="{{ page.img }}" class="">
+          {% endif %}
+          {% if page.video %}
+          <video controls autoplay muted>
+            <source src="{{ page.video }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="divide-y md:divide-y-0 md:grid md:grid-cols-2 md:gap-2 md:justify-between">
+
+        {% if page.description %}
+        <div class="py-3 text-sm flex flex-wrap md:order-last">
+          {{ page.description | markdownify }}
         </div>
         {% endif %}
 
-        {% if page.keywords %}
-        {% assign keywords = page.keywords | split: ';' %}
-        <div class="flex flex-wrap gap-x-1">
-          <div class="">
-            Keywords:
-          </div>
-          {% for keyword in keywords %}
-          <div class="">
-            #{{ keyword | lstrip }}
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
+        <div class="py-3 text-sm md:order-first">
 
-        {% if page.technologies %}
-        {% assign technologies = page.technologies | split: ';' %}
-        <div class="flex flex-wrap gap-x-1">
-          <div class="">
-            Technologies:
+          {% if page.date %}
+          <div class="flex flex-wrap gap-x-1 items-baseline">
+            <div class="">
+              Date:
+            </div>
+            <div class="p-0.5">
+              {% if site.date_format %}
+              {{ page.date | date: site.date_format }}
+              {% else %}
+              {{ page.date | date: "%b %-d, %Y" }}
+              {% endif %}
+            </div>
           </div>
-          {% for tech in technologies %}
-          <div class="">
-            {{ tech | lstrip }}
-          </div>
-          <span class="last:hidden">·</span>
-          {% endfor %}
-        </div>
-        {% endif %}
+          {% endif %}
 
+
+          {% if page.tags %}
+          <div class="flex flex-wrap gap-x-1 items-baseline">
+            <div class="">
+              Tags:
+            </div>
+            {% for tag in page.tags %}
+            {% assign tag_slug = tag | slugify: "raw" %}
+            <a href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+              class="rounded border border-opacity-10 hover:border-opacity-100 hover:border-{{site.color}}-700 hover:text-{{site.color}}-700">
+              #{{ tag }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if page.keywords %}
+          {% assign keywords = page.keywords | split: ';' %}
+          <div class="flex flex-wrap gap-x-1">
+            <div class="">
+              Keywords:
+            </div>
+            {% for keyword in keywords %}
+            <div class="">
+              #{{ keyword | lstrip }}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if page.technologies %}
+          {% assign technologies = page.technologies | split: ';' %}
+          <div class="flex flex-wrap gap-x-1">
+            <div class="">
+              Technologies:
+            </div>
+            {% for tech in technologies %}
+            <div class="">
+              {{ tech | lstrip }}
+            </div>
+            <span class="last:hidden">·</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+
+        </div>
 
       </div>
 
-    </div>
-
-
-    {% if page.url contains 'projects' %}
-    {% assign maxRelated = 4 %}
-    {% assign minCommonTags = 1 %}
-    {% assign maxRelatedCounter = 0 %}
-
-    {% for project in site.projects %}
-
-    {% assign sameTagCount = 0 %}
-    {% assign commonTags = '' %}
-
-    {% if project.url != page.url %}
-
-    {% for tag in project.tags %}
-    {% if page.tags contains tag %}
-    {% assign sameTagCount = sameTagCount | plus: 1 %}
-    {% capture tagmarkup %} <span>#{{ tag }}</span> {% endcapture %}
-    {% assign commonTags = commonTags | append: tagmarkup %}
-    {% endif %}
-    {% endfor %}
-
-    {% endif %}
-
-    {% if sameTagCount >= minCommonTags %}
-
-    {% if maxRelatedCounter == 0 %}
-    <div class="py-3 flex flex-col">
-      <div class="pb-1.5 text-sm">
-        Related projects
+      {% if content %}
+      <div class="py-3 text-sm">
+        {{ content | markdownify}}
       </div>
-      <div class="flex flex-row flex-wrap gap-2">
-        {% endif %}
+      {% endif %}
 
 
-        <a href="{{ project.url }}"
-          class="relative flex flex-wrap flex-col gap-2 w-44 sm:w-64 sm:max-w-none p-2 border rounded group
+      {% if page.url contains 'projects' %}
+      {% assign maxRelated = 4 %}
+      {% assign minCommonTags = 1 %}
+      {% assign maxRelatedCounter = 0 %}
+
+      {% for project in site.projects %}
+
+      {% assign sameTagCount = 0 %}
+      {% assign commonTags = '' %}
+
+      {% if project.url != page.url %}
+
+      {% for tag in project.tags %}
+      {% if page.tags contains tag %}
+      {% assign sameTagCount = sameTagCount | plus: 1 %}
+      {% capture tagmarkup %} <span>#{{ tag }}</span> {% endcapture %}
+      {% assign commonTags = commonTags | append: tagmarkup %}
+      {% endif %}
+      {% endfor %}
+
+      {% endif %}
+
+      {% if sameTagCount >= minCommonTags %}
+
+      {% if maxRelatedCounter == 0 %}
+      <div class="py-3 flex flex-col">
+        <div class="pb-1.5 text-sm">
+          Related projects
+        </div>
+        <div class="flex flex-row flex-wrap gap-2">
+          {% endif %}
+
+
+          <a href="{{ project.url }}" class="relative flex flex-wrap flex-col gap-2 
+            w-44 sm:w-64 sm:max-w-none p-2 border rounded group
             hover:border-{{site.color}}-700">
-          <div class="text-xs group-hover:text-{{site.color}}-700 group-hover:font-medium">
-            {{ project.title }}
-          </div>
-          <!-- {% if project.img %}
-        <img src="{{ project.id | remove: 'index' }}{{ project.img }}" class="max-w-32">
-        {% endif %} -->
-          <div class="flex flex-wrap gap-x-1 text-xs text-gray-600 group-hover:text-{{site.color}}-700">
-            {{ commonTags }}
-          </div>
-          <div class="absolute bottom-0 right-1 group-hover:text-{{site.color}}-700">
-            &#xe04e;
-          </div>
-        </a>
-        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
-        {% if maxRelatedCounter >= maxRelated %}
-        {% break %}
-        {% endif %}
-        {% endif %}
+            <div class="text-xs group-hover:text-{{site.color}}-700 group-hover:font-medium">
+              {{ project.title }}
+            </div>
+            <div class="flex flex-wrap gap-x-1 text-xs text-gray-600 group-hover:text-{{site.color}}-700">
+              {{ commonTags }}
+            </div>
+            <div class="absolute bottom-0 right-1 group-hover:text-{{site.color}}-700">
+              &#xe04e;
+            </div>
+          </a>
+          {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+          {% if maxRelatedCounter >= maxRelated %}
+          {% break %}
+          {% endif %}
+          {% endif %}
 
 
-        {% endfor %}
+          {% endfor %}
 
-        {% if maxRelatedCounter > 0 %}
+          {% if maxRelatedCounter > 0 %}
+        </div>
       </div>
+      {% endif %}
+      {% endif %}
+
+    </div>
+
+
+    {% assign include_name = false %}
+    {% if site.prev-next %}
+    <div class="flex justify-between gap-x-4 py-3">
+      {% if page.previous.url %}
+      <a href="{{ site.url }}{{ page.previous.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
+        <p>&#xe04a;</p>
+        <p class="">Prev</p>
+        {% if include_name %}
+        <p class="truncate">
+          | {{ page.previous.title }}
+        </p>
+        {% endif %}
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+
+      {% if page.next.url %}
+      <a href="{{ site.url }}{{ page.next.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
+        {% if include_name %}
+        <p class="truncate">
+          {{ page.next.title }}
+        </p>
+        |
+        {% endif %}
+        <p class="">Next</p>
+        <p>&#xe04b;</p>
+      </a>
+      {% endif %}
     </div>
     {% endif %}
-    {% endif %}
-
-  </div>
 
 
-  {% assign include_name = false %}
-  {% if site.prev-next %}
-  <div class="flex justify-between gap-x-4 py-3">
-    {% if page.previous.url %}
-    <a href="{{ site.url }}{{ page.previous.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
-      <p>&#xe04a;</p>
-      <p class="">Prev</p>
-      {% if include_name %}
-      <p class="truncate">
-        | {{ page.previous.title }}
-      </p>
-      {% endif %}
-    </a>
-    {% else %}
-    <div></div>
-    {% endif %}
-
-    {% if page.next.url %}
-    <a href="{{ site.url }}{{ page.next.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
-      {% if include_name %}
-      <p class="truncate">
-        {{ page.next.title }}
-      </p>
-      |
-      {% endif %}
-      <p class="">Next</p>
-      <p>&#xe04b;</p>
-    </a>
-    {% endif %}
-  </div>
-  {% endif %}
-
-
-  <!-- <a href="/work.html" class="flex items-center sm:hidden py-2 hover:text-gray-600">
+    <!-- <a href="/work.html" class="flex items-center sm:hidden py-2 hover:text-gray-600">
     &#xe04d; Back to projects
     &#xe124;
   </a> -->
 
-  <!-- <div>
-    {{ content | markdownify}}
-  </div> -->
-
-</div>
+  </div>
 </div>
