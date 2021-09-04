@@ -21,6 +21,7 @@ plugins:
 
 
 css_dir: "assets/css" # defaults to "css"
+color: blue
 date_format: "%b %Y"
 scholar:
   style: assets/scholar/apa3.csl
@@ -56,6 +57,7 @@ exclude:
   - yarn.lock
   - package-lock.json
   - README.md
+  - LICENSE
   - postcss.config.js
   - tailwind.config.js
   - purgecss.config.js
