@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow divide-y space-y-7">
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow divide-y space-y-7 pb-48 sm:pb-7">
 
     <div class="text-left sm:text-left max-w-prose">
         {{ site.data.index.about | markdownify }}
@@ -20,9 +20,9 @@ title: About
         </div>
         <div class="flex flex-wrap max-w-prose">
             {% for item in site.data.index.interests.areas %}
-            <div class="px-3 py-1 mr-1 my-1 text-sm border-2 rounded-full">
-                {{ item }}
-            </div>
+            <a href={{item.link}} target="_blank" class="px-3 py-1 mr-1 my-1 text-sm border-2 rounded-full hover:bg-{{site.color}}-100 hover:border-{{site.color}}-300">
+                {{ item.title }}
+            </a>
             {% endfor %}
         </div>
     </div>
@@ -34,9 +34,9 @@ title: About
         <div class="flex flex-col">
             {% for item in site.data.index.experience.history %}
             <div class="py-3">
-                <div class="font-bold">
+                <a href={{item.link}} target="_blank" class="font-bold border-b border-{{site.color}}-300 hover:text-{{site.color}}-700">
                     {{ item.company }}
-                </div>
+                </a>
                 <div class="italic">
                     {{ item.department }}
                 </div>
@@ -59,9 +59,9 @@ title: About
         <div class="flex flex-col">
             {% for item in site.data.index.education.history %}
             <div class="py-3">
-                <div class="font-bold">
+                <a href={{item.link}} target="_blank" class="font-bold border-b border-{{site.color}}-300 hover:text-{{site.color}}-700">
                     {{ item.university }}
-                </div>
+                </a>
                 <div class="text-sm">
                     {{ item.location }}
                 </div>
@@ -70,7 +70,7 @@ title: About
                     <div class="italic">
                         {{ degree.title }}
                     </div>
-                    <div class="text-sm text-gray-600">
+                    <div class="text-sm text-gray-700">
                         {{ degree.date-from }} - {{ degree.date-until }}
                     </div>
                 </div>
