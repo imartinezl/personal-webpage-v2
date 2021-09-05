@@ -1,9 +1,9 @@
 title: Iñigo Martínez
 subtitle: Ph.D. | data scientist
 about: |
-  Hi, my name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
+  Hi! my name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
   <br/><br/>
-  I have an extensive background working with large and varied datasets and using advanced statistical methods.
+  I have a background working with large and varied datasets and using advanced statistical methods.
   I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
   
   <!---
@@ -35,7 +35,7 @@ experience:
 
     - company: MIT Media Lab
       department: City Science
-      position: Research Assistant & Master's Thesis
+      position: Visiting Research Assistant & Master's Thesis
       date-from: Sep. 2016
       date-until: May. 2017
       location: Boston, US
@@ -168,10 +168,10 @@ skills:
     - title: Fabrication
       color: purple-700
       skills:
-        - Laser cutter
-        - Water jet
-        - 3D printing
-        - CNC
+        - Additive manufacturing
+        - Laser cutting
+        - Waterjet
+        - CNC machining
 
     - title: CAD CAE
       color: gray-700
@@ -195,7 +195,7 @@ reviewer:
   title: Academic Reviewer
   journals:
     - title: International Conference on Predictive APIs and Apps (PAPIs)
-      info: Boston 2017 , São Paulo 2017/2018/2019, London 2018
+      info: Boston 2017, São Paulo 2017/2018/2019, London 2018
       link: https://dblp.org/db/conf/papis/index.html
     - title: Journal of Decision Systems (JDS)
       info: Taylor & Francis 2021
