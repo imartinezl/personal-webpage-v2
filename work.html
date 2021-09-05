@@ -3,15 +3,132 @@ layout: default
 title: Work
 ---
 
-<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow pb-48 sm:pb-7">
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow pb-24 sm:pb-14">
 
-  <p class="text-2xl font-normal sm:text-lg">Projects</p> 
-  
-  <ul>
+  <div class="flex flex-col flex-grow divide-y gap-2 max-w-screen-xl overscroll-auto">
+
+    <p class="font-bold text-xl">Featured Projects</p>
+
+    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+      {% for project in site.projects %}
+      <a href="{{ project.url }}" class="relative h-64">
+
+        {% if project.img %}
+        <div class="h-64">
+          <img src="{{ project.id | remove: 'index' }}{{ project.img }}" 
+          class="h-64 w-full object-cover">
+        </div>
+        
+
+        {% if project.title or project.tags %}
+        <div class="absolute top-0 h-64 flex flex-col w-full justify-end gap-y-2 p-4
+        bg-white opacity-80 sm:opacity-0 sm:hover:opacity-80 transition duration-200 ease-custom">
+
+          {% if project.title %}
+          <div class="font-bold">
+            {{ project.title }}
+          </div>
+          {% endif %}
+
+          {% if project.tags %}
+          <div class="flex flex-wrap gap-x-1 text-sm text-gray-600">
+            {% for tag in project.tags %}
+            <div class="rounded">
+              #{{ tag }}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+        </div>
+        {% endif %}
+
+        {% endif %}
+
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-4">
+      {% for project in site.projects %}
+      <a href="{{ project.url }}" class="group flex flex-col justify-start gap-y-4 pb-4
+    transition duration-200 ease-custom transform hover:-translate-y-1">
+
+        {% if project.img %}
+        <div class="h-40 md:h-64">
+          <img src="{{ project.id | remove: 'index' }}{{ project.img }}" class="h-40 md:h-64 w-full object-cover">
+        </div>
+        {% endif %}
+
+        {% if project.title %}
+        <div class="px-3 font-bold group-hover:text-{{site.color}}-700">
+          {{ project.title }}
+        </div>
+        {% endif %}
+
+        {% if project.tags %}
+        <div class="px-3 flex flex-wrap gap-x-1 text-sm text-gray-600">
+          {% for tag in project.tags %}
+          <div class="rounded">
+            #{{ tag }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </a>
+      {% endfor %}
+    </div> -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 py-4">
+      {% for project in site.projects %}
+      <a href="{{ project.url }}" class="flex flex-col justify-start shadow
+        transition duration-200 ease-custom 
+        sm:transform sm:hover:-translate-y-1 sm:relative">
+
+
+        {% if project.img %}
+        <img class="h-64 w-full object-cover" src="{{ project.id | remove: 'index' }}{{ project.img }}">
+        {% endif %}
+
+        {% if project.title or project.tags %}
+        <div class="w-full flex flex-col gap-y-2 p-4 
+        sm:h-64 sm:absolute sm:top-0 sm:justify-end
+        transition duration-200 ease-custom 
+        sm:bg-white sm:opacity-0 sm:hover:opacity-80">
+
+          {% if project.title %}
+          <div class="font-bold">
+            {{ project.title }}
+          </div>
+          {% endif %}
+
+          {% if project.tags %}
+          <div class="flex flex-wrap gap-x-1 text-sm text-gray-600">
+            {% for tag in project.tags %}
+            <div class="rounded">
+              #{{ tag }}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+        </div>
+        {% endif %}
+
+      </a>
+      {% endfor %}
+    </div>
+
+    {% include archive.html %}
+  </div>
+  <!-- <ul>
     {% for project in site.projects %}
     <li>
       <a href="{{ project.url }}">{{ project.title }}</a>
     </li>
     {% endfor %}
-  </ul>
+  </ul> -->
+
+</div>
 </div>
