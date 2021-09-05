@@ -1761,8 +1761,10 @@
                 <text macro="container"/>
               </group>
               <group display="block">
-                <text macro="event"/>
                 <text macro="publisher"/>
+              </group>
+              <group display="block">
+                <text macro="event"/>
               </group>
             </group>
             <text macro="access"/>
