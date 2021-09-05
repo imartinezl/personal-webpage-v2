@@ -1,7 +1,7 @@
 title: Iñigo Martínez
 subtitle: Ph.D. | data scientist
 about: |
-  Hi, my name is Iñigo and I'm a data scientist and researcher on **data science and artificial intelligence**.
+  Hi, my name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
   <br/><br/>
   I have an extensive background working with large and varied datasets and using advanced statistical methods.
   I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
@@ -121,6 +121,7 @@ skills:
         - Keras
         - Scikit-Learn
         - Numpy
+        - Scipy
         - Pandas 
         - Tidyverse
 
@@ -133,9 +134,8 @@ skills:
         - Node
         - Webpack
         - Jekyll
-        - TailwindCSS
+        - Tailwind
         - Shiny
-        - WebGL
 
     - title: Graphics
       color: indigo-700
@@ -147,6 +147,7 @@ skills:
         - matplotlib
         - Processing
         - p5
+        - WebGL
 
     - title: Simulation
       color: green-700
@@ -189,7 +190,43 @@ references:
   - title: Preprints on arXiv
     file: arxiv
 
-projects-table:
+
+reviewer:
+  title: Academic Reviewer
+  journals:
+    - title: International Conference on Predictive APIs and Apps (PAPIs)
+      info: Boston 2017 , São Paulo 2017/2018/2019, London 2018
+      link: https://dblp.org/db/conf/papis/index.html
+    - title: Journal of Decision Systems (JDS)
+      info: Taylor & Francis 2021
+      link: https://www.tandfonline.com/toc/tjds20/current
+
+teaching:
+  title: Teaching & Mentorship
+  activities:
+    - title: Organizing committee International Conference on Predictive APIs and Apps (PAPIs)
+      date: 2016-2020
+    - title: Thesis supervisor for B.Sc. in Industrial Engineering
+      info:
+        - title: Proposal for a taxonomy of professional profiles in data science (2020)
+        - title: Estimating the benefits of organizational methodologies for data science projects (2021)
+    - title: Teacher in Cosmos Academy
+      info:
+        - title: Private teaching for Tecnun and Mondragon University students
+        - title: "Subjects: computer science, electric systems, thermodynamics, heat transfer, strength of materials, electronics"
+      date: 2015-2020
+    - title: Teaching Assistant
+      info:
+        - title: Strength of Materials II (B.Sc)
+          info: Prof. Aitziber Lopez
+          date: 2013
+        - title: Electric Systems (B.Sc)
+          info: Prof. Luis Fontan
+          date: 2014
+        - title: Calculus 101 (B.Sc)
+          date: 2012-2013
+
+archive-table:
   - Date
   - Title
   - Made at
