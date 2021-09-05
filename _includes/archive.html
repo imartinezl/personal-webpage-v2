@@ -1,27 +1,57 @@
+
+<p class="font-bold text-xl pt-6">Project Collection</p>
+
 {% if site.projects %}
-    <ul>
-        {% for project in site.projects %}
-        <li>
-          <a href="{{ site.url }}{{ project.url | relative_url }}">
-            <div>
-              {{ project.title }}
-            </div>
-            <div>
-              {% if site.date_format %}
-                {{ project.date | date: site.date_format }}
-              {% else %}
-                {{ project.date | date: "%b %-d, %Y" }}
-              {% endif %}
-            </div>
-            <div>
-              {{ project.category }}
-            </div>
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th class="p-2 text-left font-normal text-gray-600">Year</th>
+      <th class="p-2 text-left font-normal text-gray-600">Title</th>
+      <th class="p-2 text-left font-normal text-gray-600 hidden md:block">Built with</th>
+      <th class="p-2 text-left font-normal text-gray-600">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in site.projects %}
+    <tr class="rounded-md hover:bg-gray-200">
+      <td class="p-2 align-baseline font-mono text-sm text-{{site.color}}-700">
+        {{ project.date | date: "%Y" }}
+      </td>
+      <td class="p-2 align-baseline font-bold hover:text-{{site.color}}-700">
+        <a href="{{ site.url }}{{ project.url | relative_url }}" class="flex flex-grow">
+          {{ project.title }}
+        </a>
+      </td>
+      <td class="hidden md:block">
+        {% if project.technologies %}
+        {% assign technologies = project.technologies | split: ';' %}
+        <div class="flex flex-wrap">
+          {% for tech in technologies %}
+          <div class="p-2 align-baseline text-sm font-sans font-light">
+            {{ tech | lstrip }}
+          </div>
+          <div class="last:hidden">.</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </td>
+      <td>
+        <div class="flex gap-x-1 p-2">
+          {% if project.link %}
+          <a href={{project.link}} target="_blank" class="hover:text-{{site.color}}-700">
+            &#xe120;
           </a>
-  
-          {% if project.img %}
-            <img src="{{ project.img }}" alt="{{ post.title }}">
           {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+
+          {% if project.github %}
+          <a href={{project.github}} target="_blank" class="hover:text-{{site.color}}-700">
+            &#xe035;
+          </a>
+          {% endif %}
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endif %}
