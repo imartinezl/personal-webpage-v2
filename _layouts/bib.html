@@ -7,20 +7,28 @@
         {{reference}}
     </div>
 
-    <div>
-        {% if entry.doi %}
-        <span>
-            <a class="underline text-gray-400 hover:text-{{site.color}}-700"
-                href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank">{{ entry.doi}}</a>
-            &#xe04e;
-        </span>
 
-        {% elsif entry.url %}
-        <span>
-            <a class="underline text-gray-400 hover:text-{{site.color}}-700" href="{{ entry.url }}" target="_blank">{{
-                entry.url }}</a>
-            &#xe04e;
-        </span>
-        {% endif %}
+    {% if entry.doi %}
+    <div>
+        <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
+            href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank">{{ entry.doi}}</a>
+        &#xe04e;
     </div>
+
+    {% elsif entry.url %}
+    <div>
+        <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
+            href="{{ entry.url }}" target="_blank">{{
+            entry.url }}</a>
+        &#xe04e;
+    </div>
+    {% endif %}
+
+    {% if entry.award %}
+    <div class="p-2 items-baseline">
+        <span class="fill-current text-yellow-400 text-sm">&#xe07b;</span>
+        <span class="">{{ entry.award}}</span>
+    </div>
+    {% endif %}
+
 </div>
