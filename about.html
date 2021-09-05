@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow divide-y space-y-7 pb-48 sm:pb-7">
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow divide-y space-y-7 pb-48 sm:pb-14">
 
     <div class="text-left sm:text-left max-w-prose">
         {{ site.data.index.about | markdownify }}
@@ -20,7 +20,8 @@ title: About
         </div>
         <div class="flex flex-wrap max-w-prose">
             {% for item in site.data.index.interests.areas %}
-            <a href={{item.link}} target="_blank" class="px-3 py-1 mr-1 my-1 text-sm border-2 rounded-full hover:bg-{{site.color}}-100 hover:border-{{site.color}}-300">
+            <a href={{item.link}} target="_blank"
+                class="px-3 py-1 mr-1 my-1 text-sm border-2 rounded-full hover:bg-{{site.color}}-100 hover:border-{{site.color}}-300">
                 {{ item.title }}
             </a>
             {% endfor %}
@@ -31,19 +32,20 @@ title: About
         <div class="font-bold text-xl pt-7 pb-3">
             {{ site.data.index.experience.title }}
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-6">
             {% for item in site.data.index.experience.history %}
-            <div class="py-3">
-                <a href={{item.link}} target="_blank" class="font-bold border-b border-{{site.color}}-300 hover:text-{{site.color}}-700">
+            <div class="space-y-0.5">
+                <a href={{item.link}} target="_blank"
+                    class="font-bold border-b-2 border-{{site.color}}-500 hover:text-{{site.color}}-700">
                     {{ item.company }}
                 </a>
-                <div class="italic">
+                <div class="text-sm pt-1">
                     {{ item.department }}
                 </div>
-                <div>
+                <div class="text-sm">
                     {{ item.position }}
                 </div>
-                <div class="text-sm">
+                <div class="text-sm text-gray-600">
                     {{ item.date-from }} - {{ item.date-until }}
                 </div>
             </div>
@@ -56,37 +58,43 @@ title: About
         <div class="font-bold text-xl pt-7 pb-3">
             {{ site.data.index.education.title }}
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-4">
             {% for item in site.data.index.education.history %}
-            <div class="py-3">
-                <a href={{item.link}} target="_blank" class="font-bold border-b border-{{site.color}}-300 hover:text-{{site.color}}-700">
-                    {{ item.university }}
-                </a>
-                <div class="text-sm">
-                    {{ item.location }}
-                </div>
-                {% for degree in item.degrees %}
-                <div class="pl-3 py-3">
-                    <div class="italic">
-                        {{ degree.title }}
-                    </div>
-                    <div class="text-sm text-gray-700">
-                        {{ degree.date-from }} - {{ degree.date-until }}
+            <div class="flex flex-col gap-4">
+                <div>
+                    <a href={{item.link}} target="_blank"
+                        class="font-bold border-b-2 border-{{site.color}}-500 hover:text-{{site.color}}-700">
+                        {{ item.university }}
+                    </a>
+                    <div class="text-sm">
+                        {{ item.location }}
                     </div>
                 </div>
-                {% endfor %}
+                <div class="pl-3 flex flex-col gap-4">
+                    {% for degree in item.degrees %}
+                    <div class="flex flex-col gap-0">
+                            <div class="text-sm">
+                                {{ degree.title }}
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                {{ degree.date-from }} - {{ degree.date-until }}
+                            </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
             {% endfor %}
         </div>
     </div>
 
+    
     <div>
         <div class="font-bold text-xl pt-7 pb-3">
             {{ site.data.index.skills.title }}
         </div>
         <!-- <div class="flex flex-col space-y-2 pl-3">
             {% for scope in site.data.index.skills.scopes %}
-                <div class="flex flex-wrap divide-x divide-opacity-60 divide-{{scope.color}} space-x-1.5 sm:space-x-3 items-center">
+            <div class="flex flex-wrap divide-x divide-opacity-60 divide-{{scope.color}} space-x-1.5 sm:space-x-3 items-center">
                     <div class="px-3 font-sans font-medium text-sm rounded-full border-2 border-opacity-80 border-{{scope.color}}">
                         {{ scope.title}}
                     </div>
@@ -96,12 +104,12 @@ title: About
                     </div>
                     {% endfor %}
                 </div>
-            {% endfor %}
-        </div> -->
-        <div class="flex flex-wrap space-x-0 justify-between sm:justify-start">
-            {% for scope in site.data.index.skills.scopes %}
-            <div class="flex flex-col sm:pl-6 pb-6 divide-x divide-opacity-60 divide-{{scope.color}} items-start">
-                <div
+                {% endfor %}
+            </div> -->
+            <!-- <div class="flex flex-wrap space-x-0 justify-between sm:justify-start">
+                {% for scope in site.data.index.skills.scopes %}
+                <div class="flex flex-col sm:pl-6 pb-6 divide-x divide-opacity-60 divide-{{scope.color}} items-start">
+                    <div
                     class="min-w-full px-3 py-1 font-sans font-medium text-sm text-center rounded-full border-2 border-opacity-80 border-{{scope.color}}">
                     {{ scope.title}}
                 </div>
@@ -112,10 +120,30 @@ title: About
                 {% endfor %}
             </div>
             {% endfor %}
+        </div> -->
+        
+        <div class="gap-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 max-w-screen-md">
+            {% for scope in site.data.index.skills.scopes %}
+            <div class="flex flex-col">
+                <div class="uppercase font-bold text-sm">
+                    {{ scope.title}}
+                </div>
+                {% for skill in scope.skills %}
+                <div class="text-sm font-sans font-light">
+                    {{ skill }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
         </div>
     </div>
-
-
+    
+    <div class="font-bold text-xl pt-7">
+        <a href="assets/docs/resume.pdf" target="_blank">
+            View My Resume &#xe04b;
+        </a>
+    </div>
+    
     <!-- 
     On my website you can find some examples of my projects, most of them are links to a website or interactive
     visualization.
