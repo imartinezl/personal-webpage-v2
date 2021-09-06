@@ -139,28 +139,38 @@
         @apply text-base;
     }
 
-    .font-custom {
-        font-family: "Neue Haas Grotesk", Icons;
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000000;
+        color: white;
+        padding: 8px;
+        z-index: 100;
     }
-   
+
+    .skip-link:focus {
+        top: 0;
+    }
+
     ::-webkit-scrollbar {
         width: 6px !important;
         height: 6px !important;
     }
     ::-webkit-scrollbar-track {
-        background: transparent !important
+        background: transparent !important;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: #D1D5DB !important;
+        background-color: #d1d5db !important;
         border: none !important;
         border-radius: 3px !important;
     }
-    ::-webkit-scrollbar-thumb:hover{
-        background-color: #9CA3AF !important;
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #9ca3af !important;
     }
-    
+
     :root {
-        scrollbar-color: #D1D5DB transparent !important;
+        scrollbar-color: #d1d5db transparent !important;
         scrollbar-width: thin !important;
     }
 
