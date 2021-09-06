@@ -11,14 +11,14 @@
     {% if entry.doi %}
     <div>
         <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
-            href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank">{{ entry.doi}}</a>
+            href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank" rel="noopener">{{ entry.doi}}</a>
         &#xe04e;
     </div>
 
     {% elsif entry.url %}
     <div>
         <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
-            href="{{ entry.url }}" target="_blank">{{
+            href="{{ entry.url }}" target="_blank" rel="noopener">{{
             entry.url }}</a>
         &#xe04e;
     </div>

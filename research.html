@@ -26,7 +26,8 @@ title: Research
       </p>
       {% endif %}
       <div>
-        <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700" href="{{ item.link }}" target="_blank">
+        <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
+          href="{{ item.link }}" target="_blank" rel="noopener">
           {{item.link}}
         </a>
         &#xe04e;
@@ -53,10 +54,10 @@ title: Research
         <span class="text-sm italic">
           - {{subset.title}}
           {% if subset.info %}
-            <span> | </span>{{subset.info}} 
+          <span> | </span>{{subset.info}}
           {% endif %}
           {% if subset.date %}
-            <span>({{subset.date}})</span>
+          <span>({{subset.date}})</span>
           {% endif %}
         </span>
         {% endfor %}

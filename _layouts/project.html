@@ -15,13 +15,13 @@ layout: default
 
         <div class="text-xl flex pl-4 gap-x-2">
           {% if page.link %}
-          <a href={{page.link}} target="_blank" class="hover:text-{{site.color}}-700">
+          <a href={{page.link}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
             &#xe120;
           </a>
           {% endif %}
 
           {% if page.github %}
-          <a href={{page.github}} target="_blank" class="hover:text-{{site.color}}-700">
+          <a href={{page.github}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
             &#xe035;
           </a>
           {% endif %}

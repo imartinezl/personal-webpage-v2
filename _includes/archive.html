@@ -38,13 +38,13 @@
       <td>
         <div class="flex gap-x-1 p-2">
           {% if project.link %}
-          <a href={{project.link}} target="_blank" class="hover:text-{{site.color}}-700">
+          <a href={{project.link}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
             &#xe120;
           </a>
           {% endif %}
 
           {% if project.github %}
-          <a href={{project.github}} target="_blank" class="hover:text-{{site.color}}-700">
+          <a href={{project.github}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
             &#xe035;
           </a>
           {% endif %}
