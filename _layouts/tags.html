@@ -2,12 +2,69 @@
 layout: default
 ---
 
-<div>
-  <h1>Articles tagged with "{{ page.tag-name }}"</h1>
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow">
+  <div>Projects tagged with <strong>"{{ page.tag-name }}"</strong></div>
 
-  {% for post in site.projects %}
-    {% if post.tags contains page.tag-name %}
-      {{ post.title }} 
+  <!-- {% for project in site.projects reversed %}
+    {% if project.tags contains page.tag-name %}
+      {{ project.title }}
     {% endif %}
-  {% endfor %}
+  {% endfor %} -->
+
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th class="p-2 pt-6 text-left font-normal text-gray-600">Year</th>
+        <th class="p-2 pt-6 text-left font-normal text-gray-600">Title</th>
+        <th class="p-2 pt-6 px-1 text-left font-normal text-gray-600 hidden md:block">Built with</th>
+        <th class="p-2 pt-6 text-left font-normal text-gray-600">Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for project in site.projects reversed %}
+      {% if project.tags contains page.tag-name %}
+      <tr class="rounded-md hover:bg-gray-200 align-text-bottom">
+        <td class="p-2 font-mono text-sm text-{{site.color}}-700 slashed-zero proportional-nums">
+          {{ project.date | date: "%Y" }}
+        </td>
+        <td class="p-2 font-bold hover:text-{{site.color}}-700">
+          <a href="{{ project.url | relative_url }}" class="flex flex-grow">
+            {{ project.title }}
+          </a>
+        </td>
+        <td class="hidden md:block">
+          {% if project.technologies %}
+          {% assign technologies = project.technologies | split: ';' %}
+          <div class="py-2 flex flex-wrap items-center">
+            {% for tech in technologies %}
+            <div class="px-1 text-sm font-sans font-light">
+              {{ tech | lstrip }}
+            </div>
+            <div class="last:hidden">·</div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </td>
+        <td>
+          <div class="flex gap-x-1 p-2">
+            {% if project.link %}
+            <a href={{project.link}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
+              &#xe120;
+            </a>
+            {% endif %}
+  
+            {% if project.github %}
+            <a href={{project.github}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
+              &#xe035;
+            </a>
+            {% endif %}
+          </div>
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+
 </div>
