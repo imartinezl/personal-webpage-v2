@@ -52,12 +52,12 @@ layout: default
         </div>
         {% endif %}
 
-        <div class="py-3 text-sm md:order-first">
+        <div class="py-3 text-sm md:order-first flex flex-col gap-2">
 
           {% if page.date %}
           <div class="flex flex-wrap gap-x-1 items-baseline">
-            <div class="">
-              Date:
+            <div class="text-gray-700">
+              Date |
             </div>
             <div class="p-0.5">
               {% if site.date_format %}
@@ -72,8 +72,8 @@ layout: default
 
           {% if page.tags %}
           <div class="flex flex-wrap gap-x-1 items-baseline">
-            <div class="">
-              Tags:
+            <div class="text-gray-700">
+              Tags | 
             </div>
             {% for tag in page.tags %}
             {% assign tag_slug = tag | slugify: "raw" %}
@@ -88,8 +88,8 @@ layout: default
           {% if page.keywords %}
           {% assign keywords = page.keywords | split: ';' %}
           <div class="flex flex-wrap gap-x-1">
-            <div class="">
-              Keywords:
+            <div class="text-gray-700">
+              Keywords |
             </div>
             {% for keyword in keywords %}
             <div class="">
@@ -102,8 +102,8 @@ layout: default
           {% if page.technologies %}
           {% assign technologies = page.technologies | split: ';' %}
           <div class="flex flex-wrap gap-x-1">
-            <div class="">
-              Technologies:
+            <div class="text-gray-700">
+              Technologies |
             </div>
             {% for tech in technologies %}
             <div class="">
@@ -119,9 +119,10 @@ layout: default
 
       </div>
 
-      {% if content %}
+      {% assign content = page.content | strip_newlines %}
+      {% if content != "" %}
       <div class="py-3 text-sm">
-        {{ content | markdownify}}
+        {{ page.content | markdownify}}
       </div>
       {% endif %}
 
@@ -131,7 +132,7 @@ layout: default
       {% assign minCommonTags = 1 %}
       {% assign maxRelatedCounter = 0 %}
 
-      {% for project in site.projects %}
+      {% for project in site.projects reversed %}
 
       {% assign sameTagCount = 0 %}
       {% assign commonTags = '' %}
@@ -152,21 +153,22 @@ layout: default
 
       {% if maxRelatedCounter == 0 %}
       <div class="py-3 flex flex-col">
-        <div class="pb-1.5 text-sm">
+        <div class="pb-2.5 text-gray-700 text-sm">
           Related projects
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:max-w-screen-sm">
+        <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 
+          sm:max-w-screen-sm lg:max-w-screen-xl">
           {% endif %}
 
 
-          <a href="{{ project.url }}" class=" 
+          <a href="{{ project.url  | relative_url }}" class=" 
             flex flex-wrap flex-col gap-2
             p-2 border rounded group relative
             hover:border-{{site.color}}-700">
-            <div class="text-xs group-hover:text-{{site.color}}-700 group-hover:font-medium">
+            <div class="mr-4 text-xs group-hover:text-{{site.color}}-700 group-hover:font-medium">
               {{ project.title }}
             </div>
-            <div class="flex flex-wrap gap-x-1 text-xs text-gray-600 group-hover:text-{{site.color}}-700">
+            <div class="mr-2 flex flex-wrap gap-x-1 text-xs text-gray-600 group-hover:text-{{site.color}}-700">
               {{ commonTags }}
             </div>
             <div class="absolute bottom-0 right-1 group-hover:text-{{site.color}}-700">
@@ -194,13 +196,13 @@ layout: default
     {% assign include_name = false %}
     {% if site.prev-next %}
     <div class="flex justify-between gap-x-4 py-3">
-      {% if page.previous.url %}
-      <a href="{{ site.url }}{{ page.previous.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
         <p>&#xe04a;</p>
         <p class="">Prev</p>
         {% if include_name %}
         <p class="truncate">
-          | {{ page.previous.title }}
+          | {{ page.next.title }}
         </p>
         {% endif %}
       </a>
@@ -208,11 +210,11 @@ layout: default
       <div></div>
       {% endif %}
 
-      {% if page.next.url %}
-      <a href="{{ site.url }}{{ page.next.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="flex min-w-0 gap-x-1 hover:text-gray-600">
         {% if include_name %}
         <p class="truncate">
-          {{ page.next.title }}
+          {{ page.previous.title }}
         </p>
         |
         {% endif %}
