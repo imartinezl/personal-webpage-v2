@@ -2,48 +2,37 @@
 layout: default
 ---
 
-ALL TAGS
-<!-- {% assign tags =  site.projects | map: 'tags' | join: ',' | split: ',' | uniq | join: ';'%} -->
-{% assign tags =  site.projects | map: 'tags' | uniq %}
+<div class="p-7 sm:px-7 md:px-10 lg:px-20 overflow-auto flex flex-col flex-grow">
 
-{% for tag in tags %}
-  {% assign tag_slug = tag | slugify: "raw" %}
-  <a
-    href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
-    rel="category tag">
-    #{{ tag }}
-  </a>
-{% endfor %}
+  <div class="text-gray-700">
+    Tags
+  </div>
+  <div class="flex flex-wrap gap-x-1 items-baseline">
 
-</br>
-PER TAG
+    <!-- {% assign tags =  site.projects | reverse | map: 'tags' | uniq %} -->
+    {% assign tags = site.projects | reverse | all_tags %}
+    {% for tag in tags %}
+    {% assign tag_slug = tag['name'] | slugify: "raw" %}
+    <a href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+      class="rounded border border-opacity-10 hover:border-opacity-100 hover:border-{{site.color}}-700 hover:text-{{site.color}}-700"
+      style="font-size: {{ tag['count'] | minus: 1 | times: 2 | plus: 80 | at_least: 90 | at_most: 150 }}%">
+      #{{ tag['name'] }} ({{ tag['count'] }})
+    </a>
+    {% endfor %}
+  </div>
 
-{% for tag in tags %}
-  <h3>{{ tag }}</h3>
+  <!-- </br>
+  PER TAG
+  {% for tag in tags %}
+  <h3>{{ tag['name'] }}</h3>
   <ul>
-  {% for project in site.projects %}
-    {% if project.tags contains tag %}
+    {% for project in site.projects reversed %}
+    {% if project.tags contains tag['name'] %}
     <li><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></li>
     {% endif %}
-  {% endfor %}
-  </ul>
-{% endfor %}
-
-
-<div>
-  All tags:
-  <ul>
-    {% assign tags = site.projects | all_tags %}
-    {% for tag in tags %}
-      {% assign tag_slug = tag['name'] | slugify: "raw" %}
-      <li>
-        <a 
-          href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
-          rel="category tag">
-          #{{ tag['name'] }} ({{ tag['count'] }})
-        </a>
-      </li>
     {% endfor %}
   </ul>
-</div>
+  {% endfor %} -->
 
+
+</div>
