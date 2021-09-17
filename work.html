@@ -80,15 +80,21 @@ title: Work
       {% endfor %}
     </div> -->
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 py-4">
-      {% for project in site.projects %}
-      <a href="{{ project.url }}" class="flex flex-col justify-start shadow
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 py-8">
+      {% for project in site.projects reversed %}
+      {% if project.featured == 1 %}
+      <a href="{{ project.url | relative_url }}" class="flex flex-col justify-start shadow sm:shadow-none
         transition duration-200 ease-custom 
-        sm:transform sm:hover:-translate-y-1 sm:relative">
+        sm:transform sm:hover:-translate-y-1 sm:relative group">
 
 
-        {% if project.img %}
-        <img class="h-64 w-full object-cover" src="{{ project.id | remove: 'index' }}{{ project.img }}">
+        {% if project.thumbnail %}
+        <img class="h-64 w-full object-cover"
+        src="{{ project.id | remove: 'index' }}{{ project.thumbnail }}">
+        {% else %}
+        <div
+          class="h-64 w-full bg-gradient-to-r from-green-400 to-blue-500 group-hover:from-pink-500 group-hover:to-yellow-500">
+        </div>
         {% endif %}
 
         {% if project.title or project.tags %}
@@ -117,6 +123,7 @@ title: Work
         {% endif %}
 
       </a>
+      {% endif %}
       {% endfor %}
     </div>
 
