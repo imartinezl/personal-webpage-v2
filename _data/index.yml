@@ -1,7 +1,7 @@
 title: Iñigo Martínez
 subtitle: Ph.D. | data scientist
 about: |
-  Hi! my name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
+  Hi! My name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
   <br/><br/>
   I have a background working with large and varied datasets and using advanced statistical methods.
   I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
@@ -205,7 +205,11 @@ teaching:
   title: Teaching & Mentorship
   activities:
     - title: Organizing committee International Conference on Predictive APIs and Apps (PAPIs)
-      date: 2016-2020
+      info:
+        - title: 2017 Boston & São Paulo
+        - title: 2018 London & São Paulo
+        - title: 2019 São Paulo
+      date: 2017-2019
     - title: Thesis supervisor for B.Sc. in Industrial Engineering
       info:
         - title: Proposal for a taxonomy of professional profiles in data science (2020)
