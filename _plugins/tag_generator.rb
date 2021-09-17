@@ -10,7 +10,8 @@ Jekyll::Hooks.register :projects, :post_write do |post|
   end
   
   def generate_tag_file(tag)
-    File.open("_tags/#{tag}.md", "wb") do |file|
+    tag_slug = tag.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    File.open("_tags/#{tag_slug}.md", "wb") do |file|
       file << "---\nlayout: tags\ntag-name: #{tag}\n---\n"
     end
   end
