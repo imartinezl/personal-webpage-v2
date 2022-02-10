@@ -11,8 +11,8 @@ $ bundle exec jekyll clean
 $ bundle exec jekyll serve --livereload --incremental
 ```
 
-```bash
-$ JEKYLL_ENV=PRODUCTION bundle exec jekyll build
+```fish
+$ env JEKYLL_ENV=production bundle exec jekyll build
 $ cp _site/* ../imartinezl.github.io with replacement
 $ git push
 ```
