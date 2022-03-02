@@ -63,3 +63,5 @@ exclude:
   - purgecss.config.js
   - bin
   - .gitignore
+  - old_projects
+  - generator
