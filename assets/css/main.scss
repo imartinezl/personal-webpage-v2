@@ -170,10 +170,13 @@
         top: 0;
     }
 
+    /*
     ::-webkit-scrollbar {
         width: 6px !important;
         height: 6px !important;
     }
+    */
+
     ::-webkit-scrollbar-track {
         background: transparent !important;
     }
@@ -186,10 +189,12 @@
         background-color: #9ca3af !important;
     }
 
+    /*
     :root {
         scrollbar-color: #d1d5db transparent !important;
         scrollbar-width: thin !important;
     }
+    */
 
     #nav-icon {
         width: 30px;
