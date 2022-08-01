@@ -1,6 +1,6 @@
 ---
 date: 2016-06-01
-title: Formula student frame
+title: Formula student frame design and manufacturing
 tags: [design, mechanics, suspension, vehicle dynamics, manufacturing]
 technologies: creo; welding; 
 thumbnail: formula_student_frame_004.png

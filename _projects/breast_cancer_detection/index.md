@@ -1,8 +1,12 @@
 ---
 date: 2015-08-01
-title: Breast cancer detection
+title: breast cancer detection with supervised machine learning
 tags: [data analytics, machine learning, classification, supervised learning, bioinformatics]
 technologies: r; python; scikit-learn; caret; 
 thumbnail: breast_cancer_detection_002.png
-img: breast_cancer_detection_003.png
+carousel: [breast_cancer_detection_003.png, breast_cancer_detection_004.png, breast_cancer_detection_002.png, breast_cancer_detection_001.png]
 ---
+
+In 2008 approximately 1,380,000 new cases of breast cancer were diagnosed in the world. Today breast cancer is the most common tumor among women. Breast cancer was the cause of 411,000 deaths worldwide in 2002, leading cause of cancer death among women (representing the 14% of all deaths from malignant tumors). Breast cancer patients with the same stage of disease can have markedly different treatment responses and overall outcome. Despite a significant improvement in cancer survival in the last 20 years, anticipate the outcome of the treatment still constitutes an open question. <br> 
+In this work, gene expression data of 78 patients was summarized by using a set of elementary flux modes (EFMs). In particular, a sufficiently large set of EFMs was calculated for the production/consumption of each metabolite that can be excreted/absolved by the cell. Then, the gene expression datasets obtained from 78 patients with breast cancer were projected onto the EFMs. Afterwards, the mean pvalue for each metabolite along all the EFMs is calculated. This procedure results in a matrix with the value in the i-th row and j-th column corresponding to the mean pvalue of the i-th metabolite in the j-th patient. Those pvalues will be used as a feature to perform the final classification. <br> 
+<!-- In this assignment the following points have to be addressed: Identify differentially expressed metabolites between patients with good and bad prognosis. Use t-test and control false discovery rate. Use Principal Component Analysis to reduce the number of variables (metabolites) Evaluate whether mean p-values of metabolites can separate pa- tients using the first two principal components Identify the most accurate logistic regression model to classify prognosis of patients using: (a) Key differentially expressed metabolites and their simplest interactions (b) Using most relevant principal components and their interactions Validate the best model using 10-fold cross-validation and ROC curves. Consider all the first and second order interactions as a starting point. Them, remove one-by-one the worst interaction until the model ceases to improve in terms of AUC and AIC. 4. Use Support Vector Machines with a Gaussian Kernel to classify patients based on prognosis. -->

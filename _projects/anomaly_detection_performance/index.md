@@ -1,6 +1,6 @@
 ---
 date: 2019-12-01
-title: Anomaly detection performance
+title: anomaly detection performance evaluation
 tags: [anomaly detection, metrics, performance, visualization, statistics]
 technologies: p5; js; webpack; babel;
 thumbnail: anomaly_detection_performance_001.png

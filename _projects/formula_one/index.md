@@ -4,7 +4,7 @@ title: Formula 1 data analysis and visualization
 tags: [formula1, visualization, infographics, analysis, statistics, sports]
 technologies: r; ggplot2; dplyr; lubridate; tidyr; data.table;
 thumbnail: formula_one_002.png
-img: formula_one_002.png
+carousel: [formula_one_002.png, formula_one_001.png, formula_one_003.png, formula_one_004.png, formula_one_005.png]
 link: https://www.reddit.com/r/formula1/comments/ckebnz/crazyness_at_the_german_f1_gp_2019/
 github: https://github.com/imartinezl/formula-one
 ---
