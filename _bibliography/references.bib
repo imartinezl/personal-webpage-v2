@@ -1,3 +1,20 @@
+@InProceedings{pmlr-v162-martinez22a,
+  title = 	 {Closed-Form Diffeomorphic Transformations for Time Series Alignment},
+  author =       {Martinez, I{\~n}igo and Viles, Elisabeth and Olaizola, Igor G.},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {15122--15158},
+  year = 	 {2022},
+  %editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v162/martinez22a/martinez22a.pdf},
+  url = 	 {https://proceedings.mlr.press/v162/martinez22a.html},
+  abstract = 	 {Time series alignment methods call for highly expressive, differentiable and invertible warping functions which preserve temporal topology, i.e diffeomorphisms. Diffeomorphic warping functions can be generated from the integration of velocity fields governed by an ordinary differential equation (ODE). Gradient-based optimization frameworks containing diffeomorphic transformations require to calculate derivatives to the differential equation’s solution with respect to the model parameters, i.e. sensitivity analysis. Unfortunately, deep learning frameworks typically lack automatic-differentiation-compatible sensitivity analysis methods; and implicit functions, such as the solution of ODE, require particular care. Current solutions appeal to adjoint sensitivity methods, ad-hoc numerical solvers or ResNet’s Eulerian discretization. In this work, we present a closed-form expression for the ODE solution and its gradient under continuous piecewise-affine (CPA) velocity functions. We present a highly optimized implementation of the results on CPU and GPU. Furthermore, we conduct extensive experiments on several datasets to validate the generalization ability of our model to unseen data for time-series joint alignment. Results show significant improvements both in terms of efficiency and accuracy.}
+}
+
+
 @article{MARTINEZ2022108495,
 title = {ArchABM: An agent-based simulator of human interaction with the built environment. CO2 and viral load analysis for indoor air quality},
 journal = {Building and Environment},
