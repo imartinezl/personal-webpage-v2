@@ -6,7 +6,7 @@ layout: default
 
   <div class="flex flex-col flex-grow divide-y justify-between max-w-screen-xl overscroll-auto">
 
-    <div class="divide-y">
+    <div class="divide-y" x-data="{url: ''}">
 
       <div class="flex flex-row justify-between items-end">
         <p class="text-xl font-bold sm:text-lg">
@@ -25,20 +25,27 @@ layout: default
             &#xe035;
           </a>
           {% endif %}
+
+          {% if page.document %}
+          <a href={{page.document}} target="_blank" rel="noopener" class="hover:text-{{site.color}}-700">
+            &#xe134; 
+          </a>
+          {% endif %}
+
         </div>
       </div>
 
       {% if page.video or page.img %}
       <div>
-        <div class="py-3 sm:max-h-full md:max-w-2xl">
-          {% if page.img %}
-          <img src="{{ page.img }}" class="">
-          {% endif %}
+        <div class="flex py-3 sm:max-h-full md:max-w-2xl">
           {% if page.video %}
           <video controls autoplay muted>
             <source src="{{ page.video }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          {% endif %}
+          {% if page.img %}
+          <img src="{{ page.img }}" class="">
           {% endif %}
         </div>
       </div>
@@ -73,12 +80,12 @@ layout: default
           {% if page.tags %}
           <div class="flex flex-wrap gap-x-1 items-baseline">
             <div class="text-gray-700">
-              Tags | 
+              Tags |
             </div>
             {% for tag in page.tags %}
             {% assign tag_slug = tag | slugify: "raw" %}
             <a href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
-              class="rounded border border-opacity-10 hover:border-opacity-100 hover:border-{{site.color}}-700 hover:text-{{site.color}}-700">
+              class="rounded border-2 border-opacity-10 hover:border-opacity-100 hover:border-{{site.color}}-700 text-{{site.color}}-700 hover:tracking-1 hover:font-medium">
               #{{ tag }}
             </a>
             {% endfor %}
@@ -120,12 +127,61 @@ layout: default
       </div>
 
       {% assign content = page.content | strip_newlines %}
-      {% if content != "" %}
-      <div class="py-3 text-sm">
-        {{ page.content | markdownify}}
-      </div>
-      {% endif %}
+      <div class="md:grid md:grid-cols-2 md:gap-x-8">
+        
+        {% if content != "" %}
+        <div id="content" class="py-3 text-sm text-justify md:max-w-2xl">
+          {{ page.content | markdownify}}
 
+          {% if page.link or page.github or page.document %}
+          <div class="pt-3">
+
+            {% if page.link %}
+            <div class="flex">
+              <a href={{page.link}} target="_blank" rel="noopener" class="truncate hover:text-{{site.color}}-700 hover:tracking-1 hover:font-medium">
+                &#xe120; {{page.link}}
+              </a>
+            </div>
+            {% endif %}
+
+            {% if page.github %}
+            <div class="flex">
+              <a href={{page.github}} target="_blank" rel="noopener" class="truncate hover:text-{{site.color}}-700 hover:tracking-1 hover:font-medium">
+                &#xe035; {{page.github}}
+              </a>
+            </div>
+            {% endif %}
+
+            {% if page.document %}
+            <div class="flex">
+              <a href={{page.document}} target="_blank" rel="noopener" class="truncate hover:text-{{site.color}}-700 hover:tracking-1 hover:font-medium">
+                &#xe134; {{page.document}}
+              </a>
+            </div>
+            {% endif %}
+
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if page.carousel %}
+        <div class="md:max-h-96 md:h-96 hidden md:block p-3">
+          <img x-show="!url" src="{{page.carousel | first}}" class="md:max-h-full"/>
+          <img :src="url" class="md:max-h-full"/>
+        </div>
+        {% endif %}
+      </div>
+      
+      {% assign carousel_length = page.carousel | size %}
+      {% if carousel_length > 1 %}
+        <div class="flex flex-wrap items-start">
+          {% for img in page.carousel %}
+          <img src={{img}} class="my-4 md:m-2 md:w-32 rounded border-2 border-opacity-0 hover:border-opacity-100 border-{{site.color}}-600" 
+            x-on:click="url = '{{img}}'" x-on:mouseover="url = '{{img}}'" style="cursor: pointer"/>
+          {% endfor %}
+        </div>
+      {% endif %}
 
       {% if page.url contains 'projects' %}
       {% assign maxRelated = 4 %}
