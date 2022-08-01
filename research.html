@@ -36,6 +36,28 @@ title: Research
     {% endfor %}
   </div>
 
+  <p class="font-bold text-xl sm:text-lg">{{site.data.index.talks.title}}</p>
+  <div class="flex flex-col gap-4 py-4 mb-10">
+
+    {% for item in site.data.index.talks.conferences %}
+    <div>
+      <p>
+        {{item.title}} | {{item.venue}}
+      </p>
+      <p class="italic">
+        {{item.talk}}
+      </p>
+      <div>
+        <a class="break-all overflow-ellipsis overflow-hidden underline text-gray-400 hover:text-{{site.color}}-700"
+          href="{{ item.link }}" target="_blank" rel="noopener">
+          {{item.link}}
+        </a>
+        &#xe04e;
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
   <p class="font-bold text-xl sm:text-lg">{{site.data.index.teaching.title}}</p>
   <div class="flex flex-col gap-4 py-4 mb-10">
     {% for item in site.data.index.teaching.activities %}
