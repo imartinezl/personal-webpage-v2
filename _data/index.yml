@@ -1,10 +1,8 @@
 title: Iñigo Martínez
 subtitle: Ph.D. | data scientist
 about: |
-  Hi! My name is Iñigo and I'm a data scientist and researcher on **machine learning and artificial intelligence**.
-  <br/><br/>
-  I have a background working with large and varied datasets and using advanced statistical methods.
-  I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
+  Hi! My name is Iñigo and I'm a research scientist in  **machine learning**. <br>
+  I have a background working with large and varied datasets and using advanced statistical methods. I **transform data into valuable and tangible insights** through data science techniques, machine learning and visualization.
   
   <!---
   I hold a Bachelor’s and Master’s degree in science (Mechanical Engineering, University of Navarra).
@@ -88,14 +86,14 @@ interests:
       link: https://en.wikipedia.org/wiki/Functional_data_analysis
     - title: anomaly detection
       link: https://en.wikipedia.org/wiki/Anomaly_detection
+    - title: generative models
+      link: https://en.wikipedia.org/wiki/Flow-based_generative_model
     - title: Bayesian statistics
       link: https://en.wikipedia.org/wiki/Bayesian_statistics
     - title: agent-based simulation
       link: https://en.wikipedia.org/wiki/Agent-based_model
     - title: data visualization
       link: https://en.wikipedia.org/wiki/Data_visualization
-    - title: data analytics
-      link: https://en.wikipedia.org/wiki/Analytics
 
 
 skills:
@@ -194,18 +192,37 @@ references:
 reviewer:
   title: Academic Reviewer
   journals:
-    - title: International Conference on Predictive APIs and Apps (PAPIs)
-      info: Boston 2017, São Paulo 2017/2018/2019, London 2018
-      link: https://dblp.org/db/conf/papis/index.html
+    - title: International Conference on Machine Learning
+      info: ICML 2022
+      link: https://icml.cc/
     - title: Journal of Decision Systems (JDS)
       info: Taylor & Francis 2021
       link: https://www.tandfonline.com/toc/tjds20/current
     - title: PeerJ Computer Science
       info: PeerJ 2021
       link: https://peerj.com/computer-science/
-    - title: International Conference on Machine Learning
-      info: ICML 2022
-      link: https://icml.cc/
+    - title: International Conference on Predictive APIs and Apps (PAPIs)
+      info: Boston 2017, São Paulo 2017/2018/2019, London 2018
+      link: https://dblp.org/db/conf/papis/index.html
+
+
+
+talks:
+  title: Talks & Conferences
+  conferences:
+    - title: International Conference on Machine Learning 2022
+      venue: Baltimore, MD, USA
+      talk: Closed-form diffeomorphic transformations for time series alignment
+      link: https://icml.cc/virtual/2022/spotlight/17698
+    - title: IEEE Big Data 2022 - Workshop on Methods to Improve Big Data Science Projects
+      venue: Orlando, FL, USA
+      talk: Closed-form diffeomorphic transformations for time series alignment
+      link: http://www.midp-info.org/2022-workshop.html
+    - title: International Symposium on Intelligent Distributed Computing 2018
+      venue: Bilbao, Spain
+      talk: Labelling Drifts in a Fault Detection System for Wind Turbine Maintenance
+      link: https://idc2018.jrlab.science/index.php
+
 
 teaching:
   title: Teaching & Mentorship
