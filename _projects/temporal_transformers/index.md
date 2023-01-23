@@ -24,5 +24,5 @@ In this work, we present a closed-form expression for the ODE solution and its g
    [📝 Paper]:  <https://arxiv.org/abs/2206.08107>
    [🖼️ Poster]: <https://inigo.tech/closed-diffeomorphic/assets/poster.pdf>
    [📊 Slides]: <https://inigo.tech/closed-diffeomorphic/assets/slides.pdf>
-   [🎥 Video]:  <https://recorder-v3.slideslive.com/?share=69811&s=6ff59166-61cf-4cb8-99be-4b2f662bd538>
+   [🎥 Video]:  <https://slideslive.com/38984235/closedform-diffeomorphic-transformations-for-time-series-alignment>
    [📦 Code]:  <https://github.com/imartinezl/difw>

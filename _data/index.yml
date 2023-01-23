@@ -195,6 +195,9 @@ reviewer:
     - title: International Conference on Machine Learning
       info: ICML 2022
       link: https://icml.cc/
+    - title: Applied Energy
+      info: Elsevier 2022, 2023
+      link: https://www.sciencedirect.com/journal/applied-energy
     - title: Journal of Decision Systems (JDS)
       info: Taylor & Francis 2021
       link: https://www.tandfonline.com/toc/tjds20/current
@@ -216,8 +219,12 @@ talks:
       link: https://icml.cc/virtual/2022/spotlight/17698
     - title: IEEE Big Data 2022 - Workshop on Methods to Improve Big Data Science Projects
       venue: Orlando, FL, USA
-      talk: Closed-form diffeomorphic transformations for time series alignment
+      talk: A survey study of success factors in data science projects
       link: http://www.midp-info.org/2022-workshop.html
+    - title: Tecnun Student Research Conference 2023
+      venue: San Sebastian, Spain
+      talk: Diffeomorphic temporal transformer network for time series alignment
+      link: https://en.unav.edu/research
     - title: International Symposium on Intelligent Distributed Computing 2018
       venue: Bilbao, Spain
       talk: Labelling Drifts in a Fault Detection System for Wind Turbine Maintenance
