@@ -2,9 +2,9 @@
 title: imartinezl
 email: inigomlap@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Description
+  personal-webpage
 # baseurl: "/" # the subpath of your site, e.g. /blog
-# url: "https://imartinezl.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://inigo.tech" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  imartinezl
 favicon: 'assets/images/favicon.ico'
 google_analytics: G-DSNND8F3ZX
@@ -19,6 +19,8 @@ plugins:
   - jekyll-purgecss
   - jekyll-scholar
 
+kramdown:
+  hard_wrap: true
 
 css_dir: "assets/css" # defaults to "css"
 color: blue
